@@ -22,6 +22,10 @@
 #define CONFIG_ROTATION_BOOSTER_SUPPORT
 #endif
 
+#if defined(CONFIG_CPU_EXYNOS4412) && defined(CONFIG_VIDEO_MALI_DVFS)
+#define CONFIG_EXYNOS4_GPU_LOCK
+#endif
+
 #ifdef CONFIG_DVFS_LIMIT
 #include <linux/cpufreq.h>
 #include <mach/cpufreq.h>
