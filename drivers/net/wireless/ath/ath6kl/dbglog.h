@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2004-2011 Atheros Communications Inc.
+ * Copyright (c) 2011 Qualcomm Atheros
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -14,17 +14,11 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-int ath6kl_notify_btcoex_inq_status(struct wiphy *wiphy, bool status);
-int ath6kl_notify_btcoex_sco_status(struct wiphy *wiphy,  bool status,
-				    bool esco, u32 tx_interval,
-				    u32 tx_pkt_len);
-int ath6kl_notify_btcoex_a2dp_status(struct wiphy *wiphy, bool status);
-int ath6kl_notify_btcoex_acl_info(struct wiphy *wiphy,
-				  enum nl80211_btcoex_acl_role role,
-				  u32 lmp_ver);
-int ath6kl_notify_btcoex_antenna_config(struct wiphy *wiphy,
-				enum nl80211_btcoex_antenna_config config);
-int ath6kl_notify_btcoex_bt_vendor(struct wiphy *wiphy,
-				   enum nl80211_btcoex_vendor_list vendor);
-int ath6kl_notify_btcoex(struct wiphy *wiphy, u8 *buf,
-				int len);
+#ifndef DBGLOG_H
+#define DBGLOG_H
+
+void ath6kl_dbglog_add(const u8 *buf, size_t len);
+int ath6kl_dbglog_init(void);
+void ath6kl_dbglog_deinit(void);
+
+#endif /* DBGLOG_H */
